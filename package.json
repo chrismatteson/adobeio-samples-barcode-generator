@@ -1,18 +1,39 @@
 {
-  "name": "my-barcode-app",
-  "version": "0.0.1",
-  "dependencies": {
-    "@adobe/aio-sdk": "^2.1.0",
-    "bwip-js": "^2.0.6",
-    "node-fetch": "^2.6.0"
-  },
-  "devDependencies": {
-    "@adobe/wskdebug": "^1.1.0",
-    "javascript-barcode-reader": "^0.6.8",
-    "jest": "^24.9.0"
-  },
+  "name": "adobeio-samples-barcode-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
+    "build": "npx webpack --mode=production && npx mkdirp target && spin js2wasm -o target/adobeio-samples-barcode-generator.wasm dist/spin.js",
     "test": "jest --collectCoverage=true --testRegex ./test/actions",
     "e2e": "jest --collectCoverage=false --testRegex ./e2e"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@adobe/wskdebug": "^1.1.0",
+    "assert": "^2.1.0",
+    "browserify-zlib": "^0.2.0",
+    "constants-browserify": "^1.0.0",
+    "crypto-browserify": "^3.12.0",
+    "https-browserify": "^1.0.0",
+    "javascript-barcode-reader": "^0.6.8",
+    "jest": "^24.9.0",
+    "mkdirp": "^3.0.1",
+    "os-browserify": "^0.3.0",
+    "path-browserify": "^1.0.1",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "util": "^0.12.5",
+    "vm-browserify": "^1.1.2",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "dependencies": {
+    "@adobe/aio-sdk": "^2.1.0",
+    "@fermyon/spin-sdk": "^0.6.0",
+    "bwip-js": "^2.0.6",
+    "node-fetch": "^2.6.0"
   }
 }

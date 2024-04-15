@@ -1,0 +1,18 @@
+spin_manifest_version = 2
+
+[application]
+authors = ["Chris Matteson <chris.matteson@gmail.com>"]
+description = ""
+name = "adobeio-samples-barcode-generator"
+version = "0.1.0"
+
+[[trigger.http]]
+route = "/..."
+component = "adobeio-samples-barcode-generator"
+
+[component.adobeio-samples-barcode-generator]
+source = "target/adobeio-samples-barcode-generator.wasm"
+exclude_files = ["**/node_modules"]
+[component.adobeio-samples-barcode-generator.build]
+command = "npm run build"
+watch = ["src/**/*.js", "package.json"]
