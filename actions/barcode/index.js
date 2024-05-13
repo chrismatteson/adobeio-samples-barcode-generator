@@ -19,9 +19,10 @@ const bwipjs = require('bwip-js/node');
 //const bwipjs = require('bwip-js');
 
 // main function that will be executed by Adobe I/O Runtime
-async function main (params) {
+async function main(params) {
   // create a Logger
-  const logger = Core.Logger('main', { level: params.LOG_LEVEL || 'info' });
+  // Changed based on on import change of SDK
+  const logger = aioLogger('main', { level: params.LOG_LEVEL || 'info' });
 
   try {
     // 'info' is the default level if not set
@@ -37,7 +38,7 @@ async function main (params) {
       // return and log client errors
       return errorResponse(400, errorMessage, logger);
     }
-  
+
     const buffer = await bwipjs.toBuffer({
       bcid: 'code128',
       text: params.value,
@@ -46,7 +47,7 @@ async function main (params) {
       includetext: false,
       backgroundcolor: 'ffffff'
     });
-    
+
     return {
       headers: { 'Content-Type': 'image/png' },
       statusCode: 200,
