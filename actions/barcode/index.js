@@ -10,10 +10,13 @@
  * governing permissions and limitations under the License.
  */
 
-// Had ot change this line from importing the entire sdk for now
+// Had to change this line from importing the entire sdk for now
 let aioLogger = require('@adobe/aio-lib-core-logging')
+//const { Core } = require('@adobe/aio-sdk');
 const { errorResponse, stringParameters, checkMissingRequestInputs } = require('../utils');
-const bwipjs = require('bwip-js');
+//Had to change this to be just /node
+const bwipjs = require('bwip-js/node');
+//const bwipjs = require('bwip-js');
 
 // main function that will be executed by Adobe I/O Runtime
 async function main (params) {
