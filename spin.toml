@@ -11,7 +11,7 @@ route = "/..."
 component = "adobeio-samples-barcode-generator"
 
 [component.adobeio-samples-barcode-generator]
-source = "target/adobeio-samples-barcode-generator.wasm"
+source = "target/adobe-barcode.wasm"
 exclude_files = ["**/node_modules"]
 [component.adobeio-samples-barcode-generator.build]
 command = "npm run build"

@@ -10,7 +10,8 @@
  * governing permissions and limitations under the License.
  */
 
-const { Core } = require('@adobe/aio-sdk');
+// Had ot change this line from importing the entire sdk for now
+let aioLogger = require('@adobe/aio-lib-core-logging')
 const { errorResponse, stringParameters, checkMissingRequestInputs } = require('../utils');
 const bwipjs = require('bwip-js');
 
